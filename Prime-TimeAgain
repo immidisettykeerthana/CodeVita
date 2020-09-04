@@ -1,0 +1,36 @@
+def isprime(num) :
+    if num in [2,3,5,7] :
+        return True
+    if num%2 == 0 :
+        return False
+    i=2
+    while(i**2<=num)  :
+        if num%i==0:
+            return False
+        i+=1
+    return True
+D,P=map(int,input().split())
+if(D<10 or D>=500) or (P<2 or P>=50) or (D%P!=0):
+    print("",end="")
+else :
+    part=D//P
+    flag=0
+    count=0
+    for i in range(2,part) :
+        if isprime(i) :
+            for j in range(i,D,part) :
+                if isprime(j) :
+                    flag+=1
+                    if flag == P :
+                        count+=1
+                        flag=0
+                        break
+                    else :
+                        continue
+                else :
+                    flag=0
+                    break
+        else:
+          continue
+print(count,end="")
+                
