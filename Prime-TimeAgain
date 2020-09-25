@@ -17,7 +17,6 @@ else :
     flag=0
     count=0
     for i in range(2,part) :
-        if isprime(i) :
             for j in range(i,D,part) :
                 if isprime(j) :
                     flag+=1
@@ -30,7 +29,5 @@ else :
                 else :
                     flag=0
                     break
-        else:
-          continue
 print(count,end="")
                 
